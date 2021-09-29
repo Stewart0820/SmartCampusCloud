@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stewart.cloud.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.stewart.cloud.model.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="sex" jdbcType="BIT" property="sex" />
+    <result column="birthday" jdbcType="INTEGER" property="birthday" />
+    <result column="points" jdbcType="INTEGER" property="points" />
+    <result column="income" jdbcType="INTEGER" property="income" />
+    <result column="reg_time" jdbcType="INTEGER" property="regTime" />
+    <result column="last_time" jdbcType="INTEGER" property="lastTime" />
+    <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="mobile_validated" jdbcType="TINYINT" property="mobileValidated" />
+    <result column="head_pic" jdbcType="VARCHAR" property="headPic" />
+    <result column="email_validated" jdbcType="BIT" property="emailValidated" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="level" jdbcType="BIT" property="level" />
+    <result column="is_lock" jdbcType="BIT" property="isLock" />
+    <result column="token" jdbcType="VARCHAR" property="token" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="total_duration" jdbcType="INTEGER" property="totalDuration" />
+    <result column="is_authentic" jdbcType="BIT" property="isAuthentic" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, email, password, sex, birthday, points, income, reg_time, last_time, last_ip, 
+    qq, mobile, mobile_validated, head_pic, email_validated, nickname, level, is_lock, 
+    token, status, total_duration, is_authentic
+  </sql>
+  <select id="selectByExample" parameterType="com.stewart.cloud.model.UserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.stewart.cloud.model.UserExample">
+    delete from user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.stewart.cloud.model.User">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user (name, email, password, 
+      sex, birthday, points, 
+      income, reg_time, last_time, 
+      last_ip, qq, mobile, 
+      mobile_validated, head_pic, email_validated, 
+      nickname, level, is_lock, token, 
+      status, total_duration, is_authentic
+      )
+    values (#{name,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=BIT}, #{birthday,jdbcType=INTEGER}, #{points,jdbcType=INTEGER}, 
+      #{income,jdbcType=INTEGER}, #{regTime,jdbcType=INTEGER}, #{lastTime,jdbcType=INTEGER}, 
+      #{lastIp,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{mobileValidated,jdbcType=TINYINT}, #{headPic,jdbcType=VARCHAR}, #{emailValidated,jdbcType=BIT}, 
+      #{nickname,jdbcType=VARCHAR}, #{level,jdbcType=BIT}, #{isLock,jdbcType=BIT}, #{token,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{totalDuration,jdbcType=INTEGER}, #{isAuthentic,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.stewart.cloud.model.User">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="points != null">
+        points,
+      </if>
+      <if test="income != null">
+        income,
+      </if>
+      <if test="regTime != null">
+        reg_time,
+      </if>
+      <if test="lastTime != null">
+        last_time,
+      </if>
+      <if test="lastIp != null">
+        last_ip,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="mobileValidated != null">
+        mobile_validated,
+      </if>
+      <if test="headPic != null">
+        head_pic,
+      </if>
+      <if test="emailValidated != null">
+        email_validated,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="isLock != null">
+        is_lock,
+      </if>
+      <if test="token != null">
+        token,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="totalDuration != null">
+        total_duration,
+      </if>
+      <if test="isAuthentic != null">
+        is_authentic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=BIT},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=INTEGER},
+      </if>
+      <if test="points != null">
+        #{points,jdbcType=INTEGER},
+      </if>
+      <if test="income != null">
+        #{income,jdbcType=INTEGER},
+      </if>
+      <if test="regTime != null">
+        #{regTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastTime != null">
+        #{lastTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastIp != null">
+        #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileValidated != null">
+        #{mobileValidated,jdbcType=TINYINT},
+      </if>
+      <if test="headPic != null">
+        #{headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="emailValidated != null">
+        #{emailValidated,jdbcType=BIT},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=BIT},
+      </if>
+      <if test="isLock != null">
+        #{isLock,jdbcType=BIT},
+      </if>
+      <if test="token != null">
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="totalDuration != null">
+        #{totalDuration,jdbcType=INTEGER},
+      </if>
+      <if test="isAuthentic != null">
+        #{isAuthentic,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.stewart.cloud.model.UserExample" resultType="java.lang.Long">
+    select count(*) from user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update user
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null">
+        sex = #{record.sex,jdbcType=BIT},
+      </if>
+      <if test="record.birthday != null">
+        birthday = #{record.birthday,jdbcType=INTEGER},
+      </if>
+      <if test="record.points != null">
+        points = #{record.points,jdbcType=INTEGER},
+      </if>
+      <if test="record.income != null">
+        income = #{record.income,jdbcType=INTEGER},
+      </if>
+      <if test="record.regTime != null">
+        reg_time = #{record.regTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastTime != null">
+        last_time = #{record.lastTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastIp != null">
+        last_ip = #{record.lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qq != null">
+        qq = #{record.qq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null">
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobileValidated != null">
+        mobile_validated = #{record.mobileValidated,jdbcType=TINYINT},
+      </if>
+      <if test="record.headPic != null">
+        head_pic = #{record.headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.emailValidated != null">
+        email_validated = #{record.emailValidated,jdbcType=BIT},
+      </if>
+      <if test="record.nickname != null">
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.level != null">
+        level = #{record.level,jdbcType=BIT},
+      </if>
+      <if test="record.isLock != null">
+        is_lock = #{record.isLock,jdbcType=BIT},
+      </if>
+      <if test="record.token != null">
+        token = #{record.token,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.totalDuration != null">
+        total_duration = #{record.totalDuration,jdbcType=INTEGER},
+      </if>
+      <if test="record.isAuthentic != null">
+        is_authentic = #{record.isAuthentic,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update user
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=BIT},
+      birthday = #{record.birthday,jdbcType=INTEGER},
+      points = #{record.points,jdbcType=INTEGER},
+      income = #{record.income,jdbcType=INTEGER},
+      reg_time = #{record.regTime,jdbcType=INTEGER},
+      last_time = #{record.lastTime,jdbcType=INTEGER},
+      last_ip = #{record.lastIp,jdbcType=VARCHAR},
+      qq = #{record.qq,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      mobile_validated = #{record.mobileValidated,jdbcType=TINYINT},
+      head_pic = #{record.headPic,jdbcType=VARCHAR},
+      email_validated = #{record.emailValidated,jdbcType=BIT},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      level = #{record.level,jdbcType=BIT},
+      is_lock = #{record.isLock,jdbcType=BIT},
+      token = #{record.token,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      total_duration = #{record.totalDuration,jdbcType=INTEGER},
+      is_authentic = #{record.isAuthentic,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.stewart.cloud.model.User">
+    update user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=BIT},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=INTEGER},
+      </if>
+      <if test="points != null">
+        points = #{points,jdbcType=INTEGER},
+      </if>
+      <if test="income != null">
+        income = #{income,jdbcType=INTEGER},
+      </if>
+      <if test="regTime != null">
+        reg_time = #{regTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastTime != null">
+        last_time = #{lastTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastIp != null">
+        last_ip = #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileValidated != null">
+        mobile_validated = #{mobileValidated,jdbcType=TINYINT},
+      </if>
+      <if test="headPic != null">
+        head_pic = #{headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="emailValidated != null">
+        email_validated = #{emailValidated,jdbcType=BIT},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=BIT},
+      </if>
+      <if test="isLock != null">
+        is_lock = #{isLock,jdbcType=BIT},
+      </if>
+      <if test="token != null">
+        token = #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="totalDuration != null">
+        total_duration = #{totalDuration,jdbcType=INTEGER},
+      </if>
+      <if test="isAuthentic != null">
+        is_authentic = #{isAuthentic,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.stewart.cloud.model.User">
+    update user
+    set name = #{name,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=BIT},
+      birthday = #{birthday,jdbcType=INTEGER},
+      points = #{points,jdbcType=INTEGER},
+      income = #{income,jdbcType=INTEGER},
+      reg_time = #{regTime,jdbcType=INTEGER},
+      last_time = #{lastTime,jdbcType=INTEGER},
+      last_ip = #{lastIp,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      mobile_validated = #{mobileValidated,jdbcType=TINYINT},
+      head_pic = #{headPic,jdbcType=VARCHAR},
+      email_validated = #{emailValidated,jdbcType=BIT},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      level = #{level,jdbcType=BIT},
+      is_lock = #{isLock,jdbcType=BIT},
+      token = #{token,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      total_duration = #{totalDuration,jdbcType=INTEGER},
+      is_authentic = #{isAuthentic,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
