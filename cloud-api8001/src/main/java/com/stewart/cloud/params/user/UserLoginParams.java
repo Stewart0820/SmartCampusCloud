@@ -1,7 +1,8 @@
-package com.stewart.cloud.params;
+package com.stewart.cloud.params.user;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -10,8 +11,12 @@ import java.io.Serializable;
  */
 
 public class UserLoginParams implements Serializable {
-    @ApiModelProperty(value = "真实姓名")
+
+    @NotBlank(message="邮箱不能为空")
+    @ApiModelProperty(value = "邮箱")
     private String email;
+
+    @NotBlank(message="密码不能为空")
     @ApiModelProperty(value = "密码")
     private String password;
 

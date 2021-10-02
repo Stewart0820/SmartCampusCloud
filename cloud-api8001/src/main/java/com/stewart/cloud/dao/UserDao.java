@@ -8,6 +8,10 @@ import org.apache.ibatis.annotations.Param;
  * @create 2021/9/29
  */
 public interface UserDao {
+
     User findByEmail(@Param("email") String email);
+
     User findUserById(@Param("Id") String Id);
+
+    User findExistEmail(String email);
 }

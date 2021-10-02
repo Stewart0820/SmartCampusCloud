@@ -11,4 +11,9 @@
       where
       id=#{Id}
     </select>
+    <select id="findExistEmail" resultType="com.stewart.cloud.model.User">
+      SELECT id FROM user
+      where
+      email =#{email}
+    </select>
 </mapper>
