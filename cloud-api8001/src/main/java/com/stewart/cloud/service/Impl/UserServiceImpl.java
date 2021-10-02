@@ -3,9 +3,8 @@ package com.stewart.cloud.service.Impl;
 import com.stewart.cloud.dao.UserDao;
 import com.stewart.cloud.model.User;
 import com.stewart.cloud.service.UserService;
-import com.stewart.cloud.vo.UserLoginVo;
+import com.stewart.cloud.params.UserLoginParams;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,7 +18,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User findByEmail(UserLoginVo user) {
+    public User findByEmail(UserLoginParams user) {
         return userDao.findByEmail(user.getEmail());
     }
 

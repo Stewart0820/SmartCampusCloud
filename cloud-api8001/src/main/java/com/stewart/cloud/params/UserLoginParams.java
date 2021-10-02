@@ -1,8 +1,6 @@
-package com.stewart.cloud.vo;
+package com.stewart.cloud.params;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -11,7 +9,7 @@ import java.io.Serializable;
  * @create 2021/9/29
  */
 
-public class UserLoginVo implements Serializable {
+public class UserLoginParams implements Serializable {
     @ApiModelProperty(value = "真实姓名")
     private String email;
     @ApiModelProperty(value = "密码")

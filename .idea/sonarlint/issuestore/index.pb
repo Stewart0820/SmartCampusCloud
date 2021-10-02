@@ -57,8 +57,6 @@ Gcloud-api8001/src/main/java/com/stewart/cloud/service/TokenService.java,e\7\e7
 Pcloud-api8001/src/main/java/com/stewart/cloud/service/Impl/TokenServiceImpl.java,2\1\212cb2c6720dfbdae721b26eaf44b0139a3bc65d
 v
 Fcloud-api8001/src/main/java/com/stewart/cloud/service/UserService.java,e\1\e16450258d791896459cf1b8434faeef870372d6
-q
-Acloud-api8001/src/main/java/com/stewart/cloud/vo/UserLoginVo.java,9\9\99203997a742825116fdd7da7cbf6e0e72f94187
 ˆ
 Xcloud-api8001/src/main/java/com/stewart/cloud/interceptor/AuthenticationInterceptor.java,2\5\25d077973a4efeca098eb0bb675813c4d99fe8f2
 …

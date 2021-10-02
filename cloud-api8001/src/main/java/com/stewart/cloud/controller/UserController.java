@@ -7,7 +7,7 @@ import com.stewart.cloud.common.utils.SecurityUtils;
 import com.stewart.cloud.model.User;
 import com.stewart.cloud.service.TokenService;
 import com.stewart.cloud.service.UserService;
-import com.stewart.cloud.vo.UserLoginVo;
+import com.stewart.cloud.params.UserLoginParams;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Stewart
  * @create 2021/9/29
  */
-@Api(tags = "UserController", description = "商品品牌管理")
+@Api(tags = "UserController", description = "用户模块")
 @Controller
 @RequestMapping("user")
 public class UserController {
@@ -32,9 +32,7 @@ public class UserController {
     @ApiOperation("用户登陆")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult login(@RequestBody UserLoginVo user){
-        System.out.println(SecurityUtils.encodePassword(user.getPassword()));
-        System.out.println(SecurityUtils.matchesPassword(user.getPassword(),"$2a$10$yKIu69uZjMV32GU7m2fsgeAR2zdzsIjVU7qru2HFoCygP5tIJnigK"));
+    public CommonResult login(@RequestBody UserLoginParams user){
         JSONObject jsonObject=new JSONObject();
         User userForBase=userService.findByEmail(user);
         if(userForBase==null){

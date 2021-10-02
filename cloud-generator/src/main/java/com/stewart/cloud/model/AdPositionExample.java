@@ -244,52 +244,62 @@ public class AdPositionExample {
             return (Criteria) this;
         }
 
-        public Criteria andWidthEqualTo(Short value) {
+        public Criteria andWidthEqualTo(String value) {
             addCriterion("width =", value, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthNotEqualTo(Short value) {
+        public Criteria andWidthNotEqualTo(String value) {
             addCriterion("width <>", value, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthGreaterThan(Short value) {
+        public Criteria andWidthGreaterThan(String value) {
             addCriterion("width >", value, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthGreaterThanOrEqualTo(Short value) {
+        public Criteria andWidthGreaterThanOrEqualTo(String value) {
             addCriterion("width >=", value, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthLessThan(Short value) {
+        public Criteria andWidthLessThan(String value) {
             addCriterion("width <", value, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthLessThanOrEqualTo(Short value) {
+        public Criteria andWidthLessThanOrEqualTo(String value) {
             addCriterion("width <=", value, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthIn(List<Short> values) {
+        public Criteria andWidthLike(String value) {
+            addCriterion("width like", value, "width");
+            return (Criteria) this;
+        }
+
+        public Criteria andWidthNotLike(String value) {
+            addCriterion("width not like", value, "width");
+            return (Criteria) this;
+        }
+
+        public Criteria andWidthIn(List<String> values) {
             addCriterion("width in", values, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthNotIn(List<Short> values) {
+        public Criteria andWidthNotIn(List<String> values) {
             addCriterion("width not in", values, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthBetween(Short value1, Short value2) {
+        public Criteria andWidthBetween(String value1, String value2) {
             addCriterion("width between", value1, value2, "width");
             return (Criteria) this;
         }
 
-        public Criteria andWidthNotBetween(Short value1, Short value2) {
+        public Criteria andWidthNotBetween(String value1, String value2) {
             addCriterion("width not between", value1, value2, "width");
             return (Criteria) this;
         }
@@ -304,52 +314,62 @@ public class AdPositionExample {
             return (Criteria) this;
         }
 
-        public Criteria andHeightEqualTo(Short value) {
+        public Criteria andHeightEqualTo(String value) {
             addCriterion("height =", value, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightNotEqualTo(Short value) {
+        public Criteria andHeightNotEqualTo(String value) {
             addCriterion("height <>", value, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightGreaterThan(Short value) {
+        public Criteria andHeightGreaterThan(String value) {
             addCriterion("height >", value, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightGreaterThanOrEqualTo(Short value) {
+        public Criteria andHeightGreaterThanOrEqualTo(String value) {
             addCriterion("height >=", value, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightLessThan(Short value) {
+        public Criteria andHeightLessThan(String value) {
             addCriterion("height <", value, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightLessThanOrEqualTo(Short value) {
+        public Criteria andHeightLessThanOrEqualTo(String value) {
             addCriterion("height <=", value, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightIn(List<Short> values) {
+        public Criteria andHeightLike(String value) {
+            addCriterion("height like", value, "height");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeightNotLike(String value) {
+            addCriterion("height not like", value, "height");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeightIn(List<String> values) {
             addCriterion("height in", values, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightNotIn(List<Short> values) {
+        public Criteria andHeightNotIn(List<String> values) {
             addCriterion("height not in", values, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightBetween(Short value1, Short value2) {
+        public Criteria andHeightBetween(String value1, String value2) {
             addCriterion("height between", value1, value2, "height");
             return (Criteria) this;
         }
 
-        public Criteria andHeightNotBetween(Short value1, Short value2) {
+        public Criteria andHeightNotBetween(String value1, String value2) {
             addCriterion("height not between", value1, value2, "height");
             return (Criteria) this;
         }
@@ -434,52 +454,62 @@ public class AdPositionExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenEqualTo(Boolean value) {
+        public Criteria andIsOpenEqualTo(String value) {
             addCriterion("is_open =", value, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenNotEqualTo(Boolean value) {
+        public Criteria andIsOpenNotEqualTo(String value) {
             addCriterion("is_open <>", value, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenGreaterThan(Boolean value) {
+        public Criteria andIsOpenGreaterThan(String value) {
             addCriterion("is_open >", value, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andIsOpenGreaterThanOrEqualTo(String value) {
             addCriterion("is_open >=", value, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenLessThan(Boolean value) {
+        public Criteria andIsOpenLessThan(String value) {
             addCriterion("is_open <", value, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenLessThanOrEqualTo(Boolean value) {
+        public Criteria andIsOpenLessThanOrEqualTo(String value) {
             addCriterion("is_open <=", value, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenIn(List<Boolean> values) {
+        public Criteria andIsOpenLike(String value) {
+            addCriterion("is_open like", value, "isOpen");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsOpenNotLike(String value) {
+            addCriterion("is_open not like", value, "isOpen");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsOpenIn(List<String> values) {
             addCriterion("is_open in", values, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenNotIn(List<Boolean> values) {
+        public Criteria andIsOpenNotIn(List<String> values) {
             addCriterion("is_open not in", values, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenBetween(Boolean value1, Boolean value2) {
+        public Criteria andIsOpenBetween(String value1, String value2) {
             addCriterion("is_open between", value1, value2, "isOpen");
             return (Criteria) this;
         }
 
-        public Criteria andIsOpenNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andIsOpenNotBetween(String value1, String value2) {
             addCriterion("is_open not between", value1, value2, "isOpen");
             return (Criteria) this;
         }

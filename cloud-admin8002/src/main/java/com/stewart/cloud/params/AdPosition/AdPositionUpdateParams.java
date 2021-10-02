@@ -1,24 +1,41 @@
-package com.stewart.cloud.model;
+package com.stewart.cloud.params.AdPosition;
 
 import io.swagger.annotations.ApiModelProperty;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
-public class AdPosition implements Serializable {
+/**
+ * @author Stewart
+ * @create 2021/9/30
+ */
+public class AdPositionUpdateParams implements Serializable {
     @ApiModelProperty(value = "表id")
     private Integer id;
 
+    @NotBlank(message="广告位置名称参数不能为空")
+    @Size(max=60,message="最大长度为60")
     @ApiModelProperty(value = "广告位置名称")
     private String name;
 
+    @Size(max=5,message="广告位宽度最大长度为5")
+    @NotBlank(message="广告位宽度不能为空")
     @ApiModelProperty(value = "广告位宽度")
     private String width;
 
+    @Size(max=5,message="广告位高度最大长度为5")
+    @NotBlank(message="广告位高度不能为空")
     @ApiModelProperty(value = "广告位高度")
     private String height;
 
+    @NotBlank(message="广告描述不能为空")
     @ApiModelProperty(value = "广告描述")
     private String description;
 
+    @Size(max=1,message="请传入0或1,0开启，1关闭")
     @ApiModelProperty(value = "0开启1关闭")
     private String isOpen;
 
@@ -83,21 +100,7 @@ public class AdPosition implements Serializable {
         this.style = style;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", width=").append(width);
-        sb.append(", height=").append(height);
-        sb.append(", description=").append(description);
-        sb.append(", isOpen=").append(isOpen);
-        sb.append(", style=").append(style);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 }
