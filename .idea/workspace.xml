@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98cc9a9a-fbe8-4779-9c26-e6ece921f93b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/params/user/UserRegisterGetCodeParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/params/user/UserRegisterParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-common/src/main/java/com/stewart/cloud/common/service/Impl/RedisServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-common/src/main/java/com/stewart/cloud/common/service/RedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-common/src/main/java/com/stewart/cloud/common/utils/CommonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-common/src/main/java/com/stewart/cloud/common/utils/EmailUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-common/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin8002/target/classes/com/stewart/cloud/contorller/AdPositionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin8002/target/classes/com/stewart/cloud/contorller/AdPositionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/controller/CosController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloud-common/src/main/java/com/stewart/cloud/common/utils/TencentCOSUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-admin8002/src/main/java/com/stewart/cloud/contorller/AdPositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin8002/src/main/java/com/stewart/cloud/contorller/AdPositionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloud-api8001/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/params/UserLoginParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/params/user/UserLoginParams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/java/com/stewart/cloud/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/src/main/resources/com/stewart/cloud/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/src/main/resources/com/stewart/cloud/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/target/classes/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/params/UserLoginParams.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/service/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api8001/target/classes/com/stewart/cloud/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloud-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +201,7 @@
       <workItem from="1632798232609" duration="4718000" />
       <workItem from="1632875191870" duration="15300000" />
       <workItem from="1632966340939" duration="12989000" />
-      <workItem from="1633137376133" duration="12005000" />
+      <workItem from="1633137376133" duration="16051000" />
     </task>
     <servers />
   </component>
@@ -262,38 +241,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633158035584" />
-    <state width="1293" height="217" key="GridCell.Tab.0.bottom" timestamp="1633171095417">
+    <state width="1293" height="207" key="GridCell.Tab.0.bottom" timestamp="1633182249456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095417" />
-    <state width="1293" height="217" key="GridCell.Tab.0.center" timestamp="1633171095417">
+    <state width="1293" height="207" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249456" />
+    <state width="1293" height="207" key="GridCell.Tab.0.center" timestamp="1633182249456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095417" />
-    <state width="1293" height="217" key="GridCell.Tab.0.left" timestamp="1633171095417">
+    <state width="1293" height="207" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249456" />
+    <state width="1293" height="207" key="GridCell.Tab.0.left" timestamp="1633182249455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095417" />
-    <state width="1293" height="217" key="GridCell.Tab.0.right" timestamp="1633171095417">
+    <state width="1293" height="207" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249455" />
+    <state width="1293" height="207" key="GridCell.Tab.0.right" timestamp="1633182249456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095417" />
-    <state width="1293" height="217" key="GridCell.Tab.1.bottom" timestamp="1633171095418">
+    <state width="1293" height="207" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249456" />
+    <state width="1293" height="207" key="GridCell.Tab.1.bottom" timestamp="1633182249456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095418" />
-    <state width="1293" height="217" key="GridCell.Tab.1.center" timestamp="1633171095417">
+    <state width="1293" height="207" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249456" />
+    <state width="1293" height="207" key="GridCell.Tab.1.center" timestamp="1633182249456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095417" />
-    <state width="1293" height="217" key="GridCell.Tab.1.left" timestamp="1633171095417">
+    <state width="1293" height="207" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249456" />
+    <state width="1293" height="207" key="GridCell.Tab.1.left" timestamp="1633182249456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095417" />
-    <state width="1293" height="217" key="GridCell.Tab.1.right" timestamp="1633171095417">
+    <state width="1293" height="207" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249456" />
+    <state width="1293" height="207" key="GridCell.Tab.1.right" timestamp="1633182249456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="217" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633171095417" />
+    <state width="1293" height="207" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1633182249456" />
     <state width="1293" height="409" key="GridCell.Tab.2.bottom" timestamp="1632821715921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

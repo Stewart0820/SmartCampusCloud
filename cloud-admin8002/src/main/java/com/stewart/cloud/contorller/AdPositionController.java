@@ -81,9 +81,9 @@ public class AdPositionController {
     public CommonResult delete(@PathVariable("id") Integer id) {
         int count = adPositionService.deleteById(id);
         if (count == 1) {
-            return CommonResult.success(null);
+            return CommonResult.success("删除成功");
         } else {
-            return CommonResult.failed("操作失败");
+            return CommonResult.failed("删除失败");
         }
     }
 
