@@ -2,9 +2,9 @@ package com.stewart.cloud.contorller;
 
 import com.stewart.cloud.common.api.CommonResult;
 import com.stewart.cloud.model.AdPosition;
-import com.stewart.cloud.params.AdPosition.AdPositionCreateParams;
-import com.stewart.cloud.params.AdPosition.AdPositionUpdateIsOpenByIdParams;
-import com.stewart.cloud.params.AdPosition.AdPositionUpdateParams;
+import com.stewart.cloud.params.adposition.AdPositionCreateParams;
+import com.stewart.cloud.params.adposition.AdPositionUpdateIsOpenByIdParams;
+import com.stewart.cloud.params.adposition.AdPositionUpdateParams;
 import com.stewart.cloud.service.AdPositionService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -39,7 +39,7 @@ public class AdPositionController {
     @ApiOperation("添加广告位置")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult createBrand(@RequestBody @Valid AdPositionCreateParams adPositionParams,
+    public CommonResult create(@RequestBody @Valid AdPositionCreateParams adPositionParams,
                                     BindingResult result) {
         CommonResult commonResult;
 
@@ -80,6 +80,8 @@ public class AdPositionController {
     @ResponseBody
     public CommonResult delete(@PathVariable("id") Integer id) {
         int count = adPositionService.deleteById(id);
+
+
         if (count == 1) {
             return CommonResult.success("删除成功");
         } else {

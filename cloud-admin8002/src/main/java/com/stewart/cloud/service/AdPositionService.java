@@ -1,9 +1,9 @@
 package com.stewart.cloud.service;
 
 import com.stewart.cloud.model.AdPosition;
-import com.stewart.cloud.params.AdPosition.AdPositionCreateParams;
-import com.stewart.cloud.params.AdPosition.AdPositionUpdateIsOpenByIdParams;
-import com.stewart.cloud.params.AdPosition.AdPositionUpdateParams;
+import com.stewart.cloud.params.adposition.AdPositionCreateParams;
+import com.stewart.cloud.params.adposition.AdPositionUpdateIsOpenByIdParams;
+import com.stewart.cloud.params.adposition.AdPositionUpdateParams;
 
 import java.util.List;
 
@@ -21,4 +21,6 @@ public interface AdPositionService {
     int deleteById(Integer id);
 
     int updateIsOpenById(Integer id, AdPositionUpdateIsOpenByIdParams adPositionUpdateIsOpenByIdParams);
+
+    AdPosition findById(Integer pid);
 }

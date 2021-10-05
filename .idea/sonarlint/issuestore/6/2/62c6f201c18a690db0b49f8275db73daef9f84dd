@@ -1,0 +1,24 @@
+
+E
+java:S11486"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¥ðäˆÄ/
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(À‡¨Û8¥ðäˆÄ/
+Â
+java:S1130W"ŸRemove the declaration of thrown exception 'com.qcloud.cos.exception.CosServiceException' which is a subclass of 'com.qcloud.cos.exception.CosClientException'.(¬Š¥Éùÿÿÿÿ8›ÃèˆÄ/
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ä‰Õ×8¥ðäˆÄ/
+˜
+java:S1130W"vRemove the declaration of thrown exception 'com.qcloud.cos.exception.CosClientException' which is a runtime exception.(¬Š¥Éùÿÿÿÿ8›ÃèˆÄ/
+\
+java:S1118":Add a private constructor to hide the implicit public one.(Òä‘Íÿÿÿÿÿ8¥ðäˆÄ/
+:
+java:S21190"Save and re-use this "Random".(¼ÝÅf8¥ðäˆÄ/
+˜
+java:S1130)"vRemove the declaration of thrown exception 'com.qcloud.cos.exception.CosClientException' which is a runtime exception.(³Ú½Åûÿÿÿÿ8›ÃèˆÄ/
+V
+java:S14814"4Remove this unused "putObjectResult" local variable.(åÞ¡­üÿÿÿÿ8¥ðäˆÄ/
+U
+java:S1481N"3Remove this unused "downObjectMeta" local variable.(ÅöÞ½ûÿÿÿÿ8¥ðäˆÄ/
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(…¹é÷ÿÿÿÿÿ8¥ðäˆÄ/
+Â
+java:S1130)"ŸRemove the declaration of thrown exception 'com.qcloud.cos.exception.CosServiceException' which is a subclass of 'com.qcloud.cos.exception.CosClientException'.(³Ú½Åûÿÿÿÿ8›ÃèˆÄ/
+g
+java:S3027/"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(³¯Š‡8¥ðäˆÄ/

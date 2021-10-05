@@ -1,4 +1,4 @@
-package com.stewart.cloud.params.AdPosition;
+package com.stewart.cloud.params.adposition;
 
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.NotBlank;

@@ -54,7 +54,6 @@ public class CosController {
             System.out.println(jsonObject);
             return CommonResult.success(jsonObject);
         }
-
     }
 
     /**

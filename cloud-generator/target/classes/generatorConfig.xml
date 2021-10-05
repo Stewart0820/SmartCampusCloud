@@ -38,7 +38,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.stewart.cloud.mapper"
                              targetProject="cloud-generator\src\main\java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="ad_position">
+        <table tableName="admin_log">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
