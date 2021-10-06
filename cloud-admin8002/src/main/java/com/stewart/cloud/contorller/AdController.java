@@ -40,12 +40,12 @@ public class AdController {
     @ApiOperation("分页查询广告列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<CommonPage<Ad>> listBrand(@RequestParam(value = "pageNum", defaultValue = "1")
+    public CommonResult<CommonPage<Ad>> list(@RequestParam(value = "pageNum", defaultValue = "1")
                                                         @ApiParam("页码") Integer pageNum,
                                                   @RequestParam(value = "pageSize", defaultValue = "3")
                                                         @ApiParam("每页数量") Integer pageSize) {
-        List<Ad> brandList = adService.list(pageNum, pageSize);
-        return CommonResult.success(CommonPage.restPage(brandList));
+        List<Ad> adList = adService.list(pageNum, pageSize);
+        return CommonResult.success(CommonPage.restPage(adList));
     }
 
 

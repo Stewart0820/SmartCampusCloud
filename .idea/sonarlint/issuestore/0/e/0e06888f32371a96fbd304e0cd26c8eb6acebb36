@@ -1,7 +1,7 @@
 
 J
 java:S1125Z"(Remove the literal "true" boolean value.(¾¤ô„şÿÿÿÿ8ÄÄÿõÃ/
-„	java:S116,"cRename this field "AUTH_CODE_EXPIRE_SECONDS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÛ“Óøÿÿÿÿ8ÔŠëöÃ/
 K
 java:S1125v")Remove the literal "false" boolean value.(á¥ÿÿÿÿÿ8ôé˜üÃ/
 	java:S116*"eRename this field "REDIS_KEY_PREFIX_AUTH_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…†ìÔ8ÔŠëöÃ/
+„	java:S116,"cRename this field "AUTH_CODE_EXPIRE_SECONDS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÛ“Óøÿÿÿÿ8ÔŠëöÃ/

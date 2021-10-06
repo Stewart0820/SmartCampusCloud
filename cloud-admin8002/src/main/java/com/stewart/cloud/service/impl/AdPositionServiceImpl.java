@@ -73,10 +73,12 @@ public class AdPositionServiceImpl implements AdPositionService {
 
     @Override
     public int updateIsOpenById(Integer id, AdPositionUpdateIsOpenByIdParams adPositionUpdateIsOpenByIdParams) {
-        AdPosition adPosition = new AdPosition();
-        BeanUtils.copyProperties(adPositionUpdateIsOpenByIdParams,adPosition);
-        adPosition.setId(id);
-        return adPositionMapper.updateByPrimaryKey(adPosition);
+        AdPosition position = adPositionMapper.selectByPrimaryKey(id);
+        position.setIsOpen(adPositionUpdateIsOpenByIdParams.getIsOpen());
+
+        AdPositionExample adPositionExample = new AdPositionExample();
+        adPositionExample.createCriteria().andIdEqualTo(id);
+        return adPositionMapper.updateByExample(position,adPositionExample);
     }
 
     @Override

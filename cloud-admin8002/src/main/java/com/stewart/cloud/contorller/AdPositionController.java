@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+import static java.lang.Integer.parseInt;
+
 /**
  * @author Stewart
  * @create 2021/9/30
@@ -95,20 +97,24 @@ public class AdPositionController {
     public CommonResult updateIsOpenById(@PathVariable("id") Integer id,
                                          @RequestBody @Valid AdPositionUpdateIsOpenByIdParams adPositionUpdateIsOpenByIdParams,
                                          BindingResult result) {
-        CommonResult commonResult;
-        if(adPositionUpdateIsOpenByIdParams.getIsOpen()!="0"
-                ||adPositionUpdateIsOpenByIdParams.getIsOpen()!="1"){
-            return CommonResult.failed("只能传入0或者1");
-        }
         if (result.hasErrors()) {
             return CommonResult.failed(result.getFieldError().getDefaultMessage());
         }
+        if(adPositionUpdateIsOpenByIdParams.getIsOpen().equals("1")||
+            adPositionUpdateIsOpenByIdParams.getIsOpen().equals("0")){
+        }else{
+            return CommonResult.failed("只能传入0或者1");
+        }
+
+        AdPosition byId = adPositionService.findById(id);
+        if (byId==null){
+            return CommonResult.failed("传入的id不存在");
+        }
         int count = adPositionService.updateIsOpenById(id, adPositionUpdateIsOpenByIdParams);
         if (count == 1) {
-            commonResult = CommonResult.success("修改成功");
+            return CommonResult.success("修改成功");
         } else {
-            commonResult = CommonResult.failed("操作失败");
+            return CommonResult.failed("操作失败");
         }
-        return commonResult;
     }
 }

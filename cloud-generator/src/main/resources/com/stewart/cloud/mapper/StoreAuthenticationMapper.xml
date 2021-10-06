@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stewart.cloud.mapper.StoreAuthenticationMapper">
+  <resultMap id="BaseResultMap" type="com.stewart.cloud.model.StoreAuthentication">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+    <result column="identity_card_front" jdbcType="VARCHAR" property="identityCardFront" />
+    <result column="identity_card_end" jdbcType="VARCHAR" property="identityCardEnd" />
+    <result column="license" jdbcType="VARCHAR" property="license" />
+    <result column="food_permit" jdbcType="VARCHAR" property="foodPermit" />
+    <result column="store_front_face" jdbcType="VARCHAR" property="storeFrontFace" />
+    <result column="store_inner" jdbcType="VARCHAR" property="storeInner" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, store_id, identity_card_front, identity_card_end, license, food_permit, store_front_face, 
+    store_inner
+  </sql>
+  <select id="selectByExample" parameterType="com.stewart.cloud.model.StoreAuthenticationExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from store_authentication
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from store_authentication
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from store_authentication
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.stewart.cloud.model.StoreAuthenticationExample">
+    delete from store_authentication
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.stewart.cloud.model.StoreAuthentication">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into store_authentication (store_id, identity_card_front, identity_card_end, 
+      license, food_permit, store_front_face, 
+      store_inner)
+    values (#{storeId,jdbcType=INTEGER}, #{identityCardFront,jdbcType=VARCHAR}, #{identityCardEnd,jdbcType=VARCHAR}, 
+      #{license,jdbcType=VARCHAR}, #{foodPermit,jdbcType=VARCHAR}, #{storeFrontFace,jdbcType=VARCHAR}, 
+      #{storeInner,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.stewart.cloud.model.StoreAuthentication">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into store_authentication
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="identityCardFront != null">
+        identity_card_front,
+      </if>
+      <if test="identityCardEnd != null">
+        identity_card_end,
+      </if>
+      <if test="license != null">
+        license,
+      </if>
+      <if test="foodPermit != null">
+        food_permit,
+      </if>
+      <if test="storeFrontFace != null">
+        store_front_face,
+      </if>
+      <if test="storeInner != null">
+        store_inner,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="identityCardFront != null">
+        #{identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardEnd != null">
+        #{identityCardEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null">
+        #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="foodPermit != null">
+        #{foodPermit,jdbcType=VARCHAR},
+      </if>
+      <if test="storeFrontFace != null">
+        #{storeFrontFace,jdbcType=VARCHAR},
+      </if>
+      <if test="storeInner != null">
+        #{storeInner,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.stewart.cloud.model.StoreAuthenticationExample" resultType="java.lang.Long">
+    select count(*) from store_authentication
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update store_authentication
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.storeId != null">
+        store_id = #{record.storeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.identityCardFront != null">
+        identity_card_front = #{record.identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardEnd != null">
+        identity_card_end = #{record.identityCardEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.license != null">
+        license = #{record.license,jdbcType=VARCHAR},
+      </if>
+      <if test="record.foodPermit != null">
+        food_permit = #{record.foodPermit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storeFrontFace != null">
+        store_front_face = #{record.storeFrontFace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storeInner != null">
+        store_inner = #{record.storeInner,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update store_authentication
+    set id = #{record.id,jdbcType=INTEGER},
+      store_id = #{record.storeId,jdbcType=INTEGER},
+      identity_card_front = #{record.identityCardFront,jdbcType=VARCHAR},
+      identity_card_end = #{record.identityCardEnd,jdbcType=VARCHAR},
+      license = #{record.license,jdbcType=VARCHAR},
+      food_permit = #{record.foodPermit,jdbcType=VARCHAR},
+      store_front_face = #{record.storeFrontFace,jdbcType=VARCHAR},
+      store_inner = #{record.storeInner,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.stewart.cloud.model.StoreAuthentication">
+    update store_authentication
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="identityCardFront != null">
+        identity_card_front = #{identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardEnd != null">
+        identity_card_end = #{identityCardEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null">
+        license = #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="foodPermit != null">
+        food_permit = #{foodPermit,jdbcType=VARCHAR},
+      </if>
+      <if test="storeFrontFace != null">
+        store_front_face = #{storeFrontFace,jdbcType=VARCHAR},
+      </if>
+      <if test="storeInner != null">
+        store_inner = #{storeInner,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.stewart.cloud.model.StoreAuthentication">
+    update store_authentication
+    set store_id = #{storeId,jdbcType=INTEGER},
+      identity_card_front = #{identityCardFront,jdbcType=VARCHAR},
+      identity_card_end = #{identityCardEnd,jdbcType=VARCHAR},
+      license = #{license,jdbcType=VARCHAR},
+      food_permit = #{foodPermit,jdbcType=VARCHAR},
+      store_front_face = #{storeFrontFace,jdbcType=VARCHAR},
+      store_inner = #{storeInner,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
